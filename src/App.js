@@ -1,31 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
-import Navbar from './Navbar/Navbar';
-import Footer from './Footer/Footer';
-import Layout from './Layout/Layout';
-import Home from './Home/Home';
-import Login from './Login/Login';
-import Movies from './Movies/Movies';
-import Register from './Register/Register';
-import NotFound from './NotFound/NotFount';
-import About from './About/About';
-import People from './People/People';
-import Tv from './Tv/Tv';
-import MovieDetails from './MovieDetails/MovieDetails';
-import TvDe from './TvDe/TvDe';
-import PeopleDetails from './PeopleDetails/PeopleDetails';
-import { BrowserRouter , RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Search from './Search/Search';
-import { useState , useEffect } from 'react';
 import { jwtDecode } from 'jwt-decode';
+import { useEffect, useState } from 'react';
+import { RouterProvider, createHashRouter } from 'react-router-dom';
+import About from './About/About';
+import './App.css';
+import Home from './Home/Home';
+import Layout from './Layout/Layout';
+import Login from './Login/Login';
+import MovieDetails from './MovieDetails/MovieDetails';
+import Movies from './Movies/Movies';
+import NotFound from './NotFound/NotFount';
+import People from './People/People';
+import PeopleDetails from './PeopleDetails/PeopleDetails';
 import ProutectedRoute from './ProutectedRoute/ProutectedRoute';
+import Register from './Register/Register';
+import Search from './Search/Search';
+import Tv from './Tv/Tv';
+import TvDe from './TvDe/TvDe';
 
 
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
   const[userName , setUserName]= useState('')
-  const Routes = createBrowserRouter([
+  const Routes = createHashRouter([
     {path:'/' , element:<Layout isLogin={isLogin} setIsLogin={setIsLogin} userName={userName}/> , children: [
       {index: true , element:<Register/>},
       {path: 'login' , element:<Login setIsLogin={setIsLogin}/>},

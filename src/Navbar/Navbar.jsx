@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
-import { NavLink, Link, useNavigate } from 'react-router-dom'
-import Search from '../Search/Search'
 import axios from 'axios';
+import React, { useState } from 'react';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 
 
